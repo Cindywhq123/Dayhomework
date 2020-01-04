@@ -1,0 +1,120 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .u1
+        {
+            text-align: center;
+            width: 800px;
+            margin:0px,auto;
+            background-color: orangered;
+        }
+        .u1>li
+        {
+            display:inline-block;
+            position: relative;
+        }
+        .u1>li>a
+        {
+            text-decoration: none;
+            padding:15px 30px;
+            display:block;
+            color:#fff;
+            font-size:14px;
+        }
+        .u2
+        {
+            position: absolute;
+            width:100%;
+            background:#1e94d1;
+            display:none;
+        }
+        .u2>li
+        {
+            list-style: none;
+        }
+        .u2>li>a
+        {
+            display:block;
+            padding:8px 0;
+            text-decoration: none;
+            color:#fff;
+            font-size:14px;
+
+        }
+        .active
+        {
+            background: silver;
+        }
+        .activea
+        {
+            background: silver;
+        }
+    </style>
+    </head>
+    <body>
+        <ul class="u1">
+            <li><a href="#" class="activea">首页</a></li>
+            <li><a href="#">女装</a>
+            <ul class="u2">
+                <li><a href="#">连衣裙</a></li>
+                <li><a href="#">短裙</a></li>
+                <li><a href="#">牛仔裤</a></li>
+            </ul>
+            </li>
+            <li><a href="#">数码</a>
+                <ul class="u2">
+                    <li><a href="#">手机</a></li>
+                   <li><a href="#">相机</a></li>
+                    <li><a href="#">笔记本</a></li>
+                </ul>
+            </li>
+            <li><a href="#">美妆</a>
+                <ul class="u2">
+                    <li><a href="#">口红</a></li>
+                   <li><a href="#">粉底</a></li>
+                    <li><a href="#">香水</a></li>
+                </ul></li>
+            <li><a href="#">零食</a>
+                <ul class="u2"> 
+                    <li><a href="#">薯片</a></li>
+                   <li><a href="#">辣条</a></li>
+                    <li><a href="#">可乐</a></li>
+                </ul>
+            </li>
+            
+           
+        </ul>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+         $('.u1>li').hover(function(){
+        $(this).addClass('active');
+    },function(){
+        $(this).removeClass('active');
+    })
+ 
+    $('.u1>li>a').click(function(){
+        $(this).parent().siblings().children().removeClass('activea');
+        $(this).addClass('activea');
+    })
+ 
+    $('.u1>li').hover(function(){
+        $(this).find('.u2').fadeToggle(400);
+    })
+ 
+    $('.u2>li>a').hover(function(){
+        $(this).addClass('active');
+    }, function(){
+        $(this).removeClass('active');
+    })
+    
+        </script>
+    </body>
+</html>
